@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import temp.thymeleafdemo.controller.dto.request.CreateMemberRequestDto;
 import temp.thymeleafdemo.controller.dto.response.CreateMemberResponseDto;
-import temp.thymeleafdemo.entity.Member;
-import temp.thymeleafdemo.entity.MemberRole;
-import temp.thymeleafdemo.entity.MemberStatus;
+import temp.thymeleafdemo.domain.Member;
+import temp.thymeleafdemo.domain.MemberRole;
+import temp.thymeleafdemo.domain.MemberStatus;
 import temp.thymeleafdemo.repository.MemberMapper;
 
 @Service
@@ -17,6 +17,7 @@ public class MemberServiceImpl implements MemberService {
     private final MemberMapper memberMapper;
 
     @Override
+    @Transactional
     public CreateMemberResponseDto createMember(CreateMemberRequestDto createMemberRequestDto) {
         Member member = Member.builder()
                 .password(createMemberRequestDto.password())

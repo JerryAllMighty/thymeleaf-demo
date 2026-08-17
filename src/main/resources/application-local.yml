@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: thymeleaf-demo
+
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/board_db
+      username: root
+      password: wmf153546@
+
+mybatis:
+  # resources/mapper/ 디렉토리 및 그 하위의 모든 xml 읽기
+  mapper-locations: classpath:mapper/**/*.xml
+  # typeAliases에 사용할 도메인/DTO 패키지 경로 (XML에서 클래스 풀네임 생략 가능)
+  type-aliases-package: temp.thymeleafdemo.domain
+
+  # MyBatis 세부 옵션
+  configuration:
+    # DB 카멜케이스 자동 변환 (e.g. member_id -> memberId)
+    map-underscore-to-camel-case: true
+    # 조회 결과가 null일 때 필드 자체를 누락하지 않고 null로 세팅
+    call-setters-on-nulls: true

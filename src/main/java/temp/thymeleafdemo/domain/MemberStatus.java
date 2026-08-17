@@ -1,4 +1,4 @@
-package temp.thymeleafdemo.entity;
+package temp.thymeleafdemo.domain;
 
 public enum MemberStatus {
     NORMAL, SUSPENSION;

@@ -1,7 +1,7 @@
 package temp.thymeleafdemo.repository;
 
 import org.apache.ibatis.annotations.Mapper;
-import temp.thymeleafdemo.entity.Member;
+import temp.thymeleafdemo.domain.Member;
 
 @Mapper
 public interface MemberMapper {
