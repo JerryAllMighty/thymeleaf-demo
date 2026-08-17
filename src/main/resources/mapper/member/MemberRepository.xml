@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org">
+
+<mapper namespace="temp.thymeleafdemo.repository.MemberMapper">
+
+    <!-- 데이터 삽입 (INSERT) -->
+    <insert id="insert" parameterType="temp.thymeleafdemo.entity.Member"
+            useGeneratedKeys="true" keyProperty="memberId" keyColumn="member_id">
+        insert into member (
+        password
+        , name
+        , role
+        , status
+        , reg_date
+        )
+        values (
+        #{password}
+        , #{name}
+        , #{role}
+        , #{status}
+        , DATE_FORMAT(CURDATE(), '%Y%m%d %H%i%s')
+        )
+    </insert>
+</mapper>
