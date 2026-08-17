@@ -6,4 +6,6 @@ import temp.thymeleafdemo.domain.Member;
 @Mapper
 public interface MemberMapper {
     int insert(final Member member);
+    Member selectByNameAndPassword(final String name, final String  password);
 }
+

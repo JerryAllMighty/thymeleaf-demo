@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>타임리프 예제</title>
+</head>
+<body>
+<h1>로그인 화면</h1>
+<form th:action="@{/login/auth}" method="post">
+    <input type="text" name="name" placeholder="이름 입력 ㄱ">
+    <input type="text" name="password" placeholder="비밀번호 ㄱ">
+    <button type="submit">로그인</button>
+</form>
+</body>
+</html>

@@ -19,7 +19,7 @@ import static temp.thymeleafdemo.common.ApiConstants.MEMBER_REST_END_POINT;
 @RestController
 @RequestMapping(BASE_END_POINT + MEMBER_REST_END_POINT)
 @RequiredArgsConstructor
-public class MemberController {
+public class MemberRestController {
     private final MemberService memberService;
 
     @PostMapping

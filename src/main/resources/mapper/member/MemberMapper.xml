@@ -4,7 +4,20 @@
 
 <mapper namespace="temp.thymeleafdemo.repository.MemberMapper">
 
-    <!-- 데이터 삽입 (INSERT) -->
+    <select id="selectByNameAndPassword" parameterType="Member">
+        select
+            member_id,
+            password,
+              name,
+              role,
+              status,
+              created_at
+        from member
+        where name = #{name}
+        and password = #{password}
+    </select>
+
+
     <insert id="insert" parameterType="Member"
             useGeneratedKeys="true" keyProperty="memberId" keyColumn="member_id">
         insert into member (

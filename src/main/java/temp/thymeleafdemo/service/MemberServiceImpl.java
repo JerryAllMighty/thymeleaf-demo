@@ -3,6 +3,7 @@ package temp.thymeleafdemo.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import temp.thymeleafdemo.controller.UserForm;
 import temp.thymeleafdemo.controller.dto.request.CreateMemberRequestDto;
 import temp.thymeleafdemo.controller.dto.response.CreateMemberResponseDto;
 import temp.thymeleafdemo.domain.Member;
@@ -35,5 +36,12 @@ public class MemberServiceImpl implements MemberService {
                 .name(member.getName())
                 .role(member.getClass().getName())
                 .build();
+    }
+
+    @Override
+    public Member getMemberByNameAndPassword(UserForm userForm) {
+        String name = userForm.name();
+        String password = userForm.password();
+        return memberMapper.selectByNameAndPassword(name, password);
     }
 }
